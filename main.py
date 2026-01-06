@@ -1,21 +1,35 @@
 import base64
+from pydantic import BaseModel
 from fastapi import FastAPI, APIRouter, Request
 from fastapi.responses import JSONResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 router = APIRouter()
+
+class MinifyPayload(BaseModel):
+    url: str
+
 cache = {"txminf.net": "https://www.google.com"}
 
 def log_info(request: Request):
     pass
 
 @router.get("/ping")
-def ping():
+def ping(request: Request):
+    log_info(request)
     return JSONResponse(content={"result": "pong"}, headers={"Content-Type": "application/json"})
 
-@router.post("/minify_url/{url}")
-def minify_url(request: Request, url: str):
+@router.post("/minify_url")
+async def minify_url(payload: MinifyPayload):
+    print(f"payload: {str(payload)}")
+    url = payload.url
+    try:
+        encoded_string = base64.b64encode(url.encode('utf-8')).decode('utf-8')
+        cache[url] = encoded_string
+        return Response(status_code=200)
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error": str(e)})
 
 
 
