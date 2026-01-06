@@ -5,10 +5,14 @@
         "build": "vite build"
     },
     "dependencies": {
+        "@tanstack/react-query": "^5.90.16",
         "@vitejs/plugin-react": "^5.1.2",
+        "effect": "^3.19.14",
         "jsx-runtime": "^1.2.0",
         "react": "^19.2.3",
         "react-dom": "^19.2.3",
+        "sonner": "^2.0.7",
+        "toast": "^0.5.4",
         "vite": "^7.3.0"
     },
     "devDependencies": {
