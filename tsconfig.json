@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "allowImportingTsExtensions": false,
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "lib": ["ES2023"],
+        "esModuleInterop": true,
+        "strict": true
+    },
+    "references": ["packages/client/tsconfig.json"],
+    "files": [],
+    "outDir": "./dist"
+
+}

@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "allowImportingTsExtensions": false,
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "lib": ["ES2023", "dom"],
+        "esModuleInterop": true,
+        "strict": true
+    }
+}

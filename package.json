@@ -1,0 +1,7 @@
+{
+    "name": "url_shortener",
+    "description": "URL Shortener App",
+    "scripts": {
+        "dev": "fastapi dev main.py"
+    }
+}
