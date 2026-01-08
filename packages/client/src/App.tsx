@@ -13,6 +13,9 @@ export const App = () => {
     const minifyMutation = useMutation<Payload, Error>({
         mutationKey: ['minifyMutation'],
         mutationFn: async () => {
+            // test fetch
+            const outputTest = await fetch('https://www.google.com');
+            
             const output = await fetch('http://127.0.0.1:8000/minify_url',
                 {
                     method: 'POST',

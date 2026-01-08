@@ -1,7 +1,9 @@
 {
     "name": "url_shortener",
     "description": "URL Shortener App",
+    "workspaces": ["packages/*"],
     "scripts": {
-        "dev": "fastapi dev main.py"
+        "dev": "fastapi dev main.py",
+        "build": "bun run --filter '*' build"
     }
 }

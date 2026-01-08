@@ -1,0 +1,5 @@
+[project]
+name = "cloudflare-worker"
+dependencies = [
+    "fastapi"
+]
